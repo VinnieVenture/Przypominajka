@@ -1,10 +1,6 @@
-<div class='container-fluid'>
-  <div class='row'>
-    <div class='col-sm-3'>
-      <app-nav-menu></app-nav-menu>
-    </div>
-    <div class='col-sm-9 body-content'>
-      <router-outlet></router-outlet>
-    </div>
-  </div>
-</div>
+<button (click)="onFutureAlarms()" class="button button1">Przyszłe alarmy</button>
+<button (click)="onPastAlarms()" class="button button2">Archiwalne</button>
+<button (click)="onAddNew()" class="button button3">Dodaj alarm</button>
+
+<app-home></app-home>
+<footer>V.1.0.0 - footer przypięty na samym dole, moze byc pasek 20px</footer>
