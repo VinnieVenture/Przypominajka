@@ -17,7 +17,7 @@ namespace Przypominajka
             var config = DefaultConfiguration.CreateForRuntimePlatform();
 
             // your configuration
-            config.StartUrl = $"D:\\Programy\\Przypominajka\\Przypominajka.Angular\\ClientApp\\dist\\index.html";
+            config.StartUrl = $"D:\\Amadeusz\\IT\\Przypominajka\\Przypominajka.Angular\\ClientApp\\dist\\index.html";
             config.WindowOptions.Title = "Przypominajka";
             config.WindowOptions.WindowFrameless = true;
             config.WindowOptions.StartCentered = false;

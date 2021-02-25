@@ -12,11 +12,10 @@
     <BuildServerSideRenderer>false</BuildServerSideRenderer>
     <Platforms>AnyCPU;x64;x86</Platforms>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Przypominajka.Angular.Program</StartupObject>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
-    <OutputPath>D:\Programy\Przypominajka\bin\</OutputPath>
+    <OutputPath>D:\Amadeusz\IT\Przypominajka\bin</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
