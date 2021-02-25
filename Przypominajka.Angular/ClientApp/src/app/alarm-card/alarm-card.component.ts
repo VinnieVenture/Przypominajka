@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AlarmCard } from './Alarm';
 
 @Component({
@@ -8,7 +9,7 @@ import { AlarmCard } from './Alarm';
 })
 export class AlarmCardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   @Input()
   alarm: AlarmCard;
@@ -20,6 +21,16 @@ export class AlarmCardComponent implements OnInit {
     this.date = this.alarm.DateTime.toLocaleDateString(); 
 
     this.time = this.alarm.DateTime.getHours().toString() + ":" + this.alarm.DateTime.getMinutes().toString();
+  }
+
+  onDelete()
+  {
+
+  }
+
+  onMoreInfo(): void
+  {
+    this.router.navigateByUrl('alarmInfosCard');
   }
 
 }
