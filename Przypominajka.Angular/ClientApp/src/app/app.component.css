@@ -4,3 +4,26 @@
     padding-top: 50px;
   }
 }
+
+.row {
+  margin: 0;
+}
+
+.window {
+  display: flex;
+  flex-direction: column;
+  height: 791px;
+}
+
+.mainWindow {
+  flex: 1 0 auto;
+  background-color: #8ebdb2;
+}
+
+.footer {
+  background-color: #8ebdb2;
+}
+
+.logo {
+  border-bottom: 2px solid #3b4c48;
+}

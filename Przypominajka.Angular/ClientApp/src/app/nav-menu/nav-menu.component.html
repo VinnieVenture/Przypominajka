@@ -1,3 +1,10 @@
-<button routerLink='/' routerLinkActive='active-link' class="button button1">Przyszłe alarmy</button>
-<button routerLink='/alarm-card/' routerLinkActive='active-link' class="button button2">Archiwalne</button>
-<button class="button button3">Dodaj alarm</button>
+<div class="row menuItem" role="group">
+  <input type="radio" id="future" name="menu" checked routerLink='/' routerLinkActive='active-link' />
+  <label for="future">Przyszłe alarmy</label>
+  <input type="radio" id="arch" name="menu" routerLink='/alarm-card/' routerLinkActive='active-link'/>
+  <label for="arch">Archiwalne</label>
+
+  <!--<button routerLink='/' routerLinkActive='active-link' class="button col" type="button">Przyszłe alarmy</button>
+  <button routerLink='/alarm-card/' routerLinkActive='active-link' class="button col" type="button">Archiwalne</button>-->
+  <!--<button class="button col">Dodaj alarm</button>-->
+</div>

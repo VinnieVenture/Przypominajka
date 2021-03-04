@@ -15,5 +15,4 @@ export class NavMenuComponent implements OnInit {
   ngOnInit() {
     this.route = this.router.url;
   }
-
 }
