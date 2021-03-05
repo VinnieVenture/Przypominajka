@@ -1,6 +1,14 @@
-<button (click)="onFutureAlarms()" class="button button1">Przyszłe alarmy</button>
-<button (click)="onPastAlarms()" class="button button2">Archiwalne</button>
-<button (click)="onAddNew()" class="button button3">Dodaj alarm</button>
-
-<router-outlet></router-outlet>
-<footer>V.1.0.0 - footer przypięty na samym dole, moze byc pasek 20px</footer>
+<div class="col window">
+  <div class="row logo">
+    <img alt="Card" src="../assets/Logo2.png" width="484" height="270">
+  </div>
+  <div class="row">
+    <app-nav-menu></app-nav-menu>
+  </div>
+  <div class="row mainWindow">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="row footer">
+    <footer>V.1.0.0 by Dominika Los</footer>
+  </div>
+</div>
