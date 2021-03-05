@@ -11,6 +11,7 @@ import { DatePipe } from '@angular/common';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AlarmCardComponent } from './alarm-card/alarm-card.component';
+import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { AlarmInfosCardComponent } from './alarm-infos-card/alarm-infos-card.component';
 
 const appRoutes: Routes = [
