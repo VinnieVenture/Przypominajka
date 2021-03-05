@@ -1,4 +1,6 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Data } from '@angular/router';
 
 @Component({
   selector: 'alarm-infos-card',
@@ -7,9 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlarmInfosCardComponent implements OnInit {
 
-  constructor() { }
+  Id: number;
+  paramsSub: any;
+  DateTime: Data;
+  Note: string;
+
+  constructor(private activatedRoute: ActivatedRoute, private location: Location) { }
 
   ngOnInit() {
+    this.paramsSub = this.activatedRoute.params.subscribe(params =>
+      this.Id = parseInt(params['Id'], 10)
+    )
+    this.LoadData();
   }
 
+  ngOnDestroy()
+  {
+    this.paramsSub.unsubscribe();
+  }
+
+  LoadData()
+  {
+    this.DateTime = new Date();
+    this.Note = "Alarm /n/nAlarm!"
+  }
 }

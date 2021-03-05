@@ -16,7 +16,7 @@ import { AlarmInfosCardComponent } from './alarm-infos-card/alarm-infos-card.com
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'alarm-card', component: AlarmCardComponent },
-  { path: 'alarmInfosCard', component: AlarmInfosCardComponent },
+  { path: 'alarmInfosCard/:Id', component: AlarmInfosCardComponent },
 ];
 
 const routingOptions: ExtraOptions = {

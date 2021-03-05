@@ -16,11 +16,13 @@ export class AlarmCardComponent implements OnInit {
 
   date: string;
   time: string;
+  id: number;
 
   ngOnInit() {
     this.date = this.alarm.DateTime.toLocaleDateString(); 
 
     this.time = this.alarm.DateTime.getHours().toString() + ":" + this.alarm.DateTime.getMinutes().toString();
+    this.id = this.alarm.Id;
   }
 
   onDelete()
@@ -28,9 +30,9 @@ export class AlarmCardComponent implements OnInit {
 
   }
 
-  onMoreInfo(): void
-  {
-    this.router.navigateByUrl('alarmInfosCard');
-  }
+  //onMoreInfo(): void
+  //{
+  //  this.router.navigateByUrl('alarmInfosCard');
+  //}
 
 }
