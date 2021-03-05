@@ -11,11 +11,12 @@ import { DatePipe } from '@angular/common';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AlarmCardComponent } from './alarm-card/alarm-card.component';
-import { NavMenuComponent } from './nav-menu/nav-menu.component';
+import { AlarmInfosCardComponent } from './alarm-infos-card/alarm-infos-card.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'alarm-card', component: AlarmCardComponent },
+  { path: 'alarmInfosCard/:Id', component: AlarmInfosCardComponent },
 ];
 
 const routingOptions: ExtraOptions = {
@@ -26,6 +27,7 @@ const routingOptions: ExtraOptions = {
   declarations: [
     AppComponent,
     HomeComponent,
+    AlarmInfosCardComponent,
     AlarmCardComponent,
     NavMenuComponent,
   ],
@@ -43,3 +45,4 @@ const routingOptions: ExtraOptions = {
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
+
