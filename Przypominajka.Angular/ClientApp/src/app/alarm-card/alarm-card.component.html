@@ -1,14 +1,13 @@
-<div style="border: black solid 5px">
-  <table>
-    <tr class="row">
-      <td style="background-color:aqua">{{date}}</td>
-      <td style="background-color:cadetblue">{{time}}</td>
-      <td><button class="button button4" (click)="onDelete()">Usuń (mock)</button></td>
-    </tr>
-    <tr class="row">
-      <td style="background-color:goldenrod">{{alarm.Note}}</td>
-      <td style="background-color:navy"></td>
-      <td><button routerLink='/alarmInfosCard/{{id}}' routerLinkActive='active-link' class="button button1">Szczegóły</button></td>
-    </tr>
-  </table>
+<div class="alarmBack col">
+  <div class="row">
+    <p class="col" style="background-color:aqua">{{date}}</p>
+    <p class="col" style="background-color:cadetblue">{{time}}</p>
+    <button class="col- button button4">Usuń (mock)</button>
+  </div>
+  <div class="row">
+    <p style="background-color:goldenrod">{{alarm.Note}}</p>
+  </div>
+  <div class="row">
+    <button routerLink='/alarmInfosCard/{{id}}' routerLinkActive='active-link' class="button button1">Szczegóły</button>
+  </div>
 </div>

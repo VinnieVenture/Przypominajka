@@ -13,11 +13,15 @@
   display: flex;
   flex-direction: column;
   height: 791px;
+  overflow: hidden;
 }
 
 .mainWindow {
   flex: 1 0 auto;
   background-color: #8ebdb2;
+  padding-top: 10px;
+  height: 200px;
+  overflow: auto;
 }
 
 .footer {
