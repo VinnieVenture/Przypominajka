@@ -1,0 +1,11 @@
+.alarmItem {
+  padding: 10px;
+}
+
+.row {
+  margin: 0;
+}
+
+:host {
+  width: 100%;
+}

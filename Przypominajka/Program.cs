@@ -1,46 +1,43 @@
-﻿using Chromely;
+﻿using System;
+using Chromely;
 using Chromely.Core;
 using Chromely.Core.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
-namespace Przypominajka
+namespace ChromelyAngular
 {
-    public class Program
+    class Program
     {
+        [STAThread]
         static void Main(string[] args)
         {
-            // create a configuration with OS-specific defaults
             var config = DefaultConfiguration.CreateForRuntimePlatform();
-
-            // your configuration
-            config.StartUrl = $"D:\\Amadeusz\\IT\\Przypominajka\\Przypominajka.Angular\\ClientApp\\dist\\index.html";
+            config.StartUrl = "local://dist/index.html";
             config.WindowOptions.Title = "Przypominajka";
             config.WindowOptions.WindowFrameless = true;
             config.WindowOptions.StartCentered = false;
             config.WindowOptions.Size = new WindowSize(500, 800);
             config.WindowOptions.Position = new WindowPosition(1350, 200);
-            //..
 
-            // application builder
             AppBuilder
-            .Create()
-            .UseApp<DemoChromelyApp>()
-            .UseConfig<IChromelyConfiguration>(config)
-            .Build()
-            .Run(args);
+                .Create()
+                .UseConfig<DefaultConfiguration>(config)
+                .UseApp<DemoApp>()
+                .Build()
+                .Run(args);
         }
     }
 
-    public class DemoChromelyApp : ChromelyBasicApp
+    public class DemoApp : ChromelyBasicApp
     {
-        //public override void ConfigureServices(IServiceCollection services)
-        //{
-        //    base.ConfigureServices(container);
-        //    // other service configuration can be placed here
-        //}
+        public override void ConfigureServices(IServiceCollection services)
+        {
+            base.ConfigureServices(services);
+            services.AddLogging(configure => configure.AddConsole());
+            services.AddLogging(configure => configure.AddFile("Logs/serilog-{Date}.txt"));
+
+            RegisterControllerAssembly(services, typeof(DemoApp).Assembly);
+        }
     }
 }

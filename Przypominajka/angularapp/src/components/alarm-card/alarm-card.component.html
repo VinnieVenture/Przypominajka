@@ -1,0 +1,14 @@
+<div class="alarmBack col">
+  <div class="row">
+    <p class="col"><b>Data:</b> {{date}}</p>
+    <p class="col"><b>Godz.</b> {{time}}</p>
+    <button class="col- btn btn-danger">X</button>
+  </div>
+  <div class="row">
+    <p class="col"><b>Notatka:</b></p>
+  </div>
+  <div class="row">
+    <p class="col">{{alarm.Note}}</p>
+    <button routerLink='/alarmInfosCard/{{id}}' routerLinkActive='active-link' class="col- btn btn-default">Szczegóły</button>
+  </div>
+</div>

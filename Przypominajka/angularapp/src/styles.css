@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+
+.btn-default {
+  color: white;
+  background-color: #5bb19d;
+  border-color: #ccc;
+}
+
+.btn-default:focus {
+  color: white;
+  background-color: #a0d2c6;
+  border-color: #8c8c8c;
+}
+
+.btn-default:hover {
+  color: white;
+  background-color: #6a8e86;
+  border-color: #adadad;
+}
+
+.btn-default:active {
+  color: white;
+  background-color: #5bb19d;
+  border-color: #adadad;
+}
