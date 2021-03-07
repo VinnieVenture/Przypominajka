@@ -2,17 +2,21 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
     <PublishSingleFile>true</PublishSingleFile>
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <!-- <RuntimeIdentifier>linux-x64</RuntimeIdentifier>-->
     <!-- <RuntimeIdentifier>osx-x64</RuntimeIdentifier>-->
-    <Platforms>x64</Platforms>
+    <Platforms>x64;x86</Platforms>
     <!-- <ApplicationIcon>chromely.ico</ApplicationIcon>-->
-    <AssemblyName>chromely_angular</AssemblyName>
+    <AssemblyName>Przypominajka</AssemblyName>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <ApplicationIcon />
-    <StartupObject />
+    <StartupObject>ChromelyAngular.Program</StartupObject>
+    <PackageId>Przypominajka</PackageId>
+    <Authors>Przypominajka</Authors>
+    <Company>Przypominajka</Company>
+    <Product>Przypominajka</Product>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -20,19 +24,27 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <PlatformTarget>x64</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Chromely" Version="5.1.86" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.5" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.5" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="3.1.5" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="5.0.0" />
     <PackageReference Include="Serilog.Extensions.Logging.File" Version="2.0.0" />
-    <PackageReference Include="System.Text.Json" Version="4.7.2" />
+    <PackageReference Include="System.Text.Json" Version="5.0.1" />
   </ItemGroup>
   
   <ItemGroup>
     <Compile Remove="angularapp\node_modules\**" />
+    <Compile Remove="packages\**" />
     <EmbeddedResource Remove="angularapp\node_modules\**" />
+    <EmbeddedResource Remove="packages\**" />
     <None Remove="angularapp\node_modules\**" />
+    <None Remove="packages\**" />
   </ItemGroup>
 
   <ItemGroup>
