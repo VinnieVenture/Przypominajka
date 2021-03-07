@@ -3,7 +3,9 @@ import { RouterModule, Routes, ExtraOptions } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NgScrollbarModule, NG_SCROLLBAR_OPTIONS } from 'ngx-scrollbar';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
 
 import { DecimalPipe } from '@angular/common';
 import { DatePipe } from '@angular/common';
@@ -22,7 +24,6 @@ const appRoutes: Routes = [
 
 const routingOptions: ExtraOptions = {
   onSameUrlNavigation: 'reload',
-  enableTracing: true
 };
 
 @NgModule({
@@ -39,6 +40,8 @@ const routingOptions: ExtraOptions = {
     FormsModule,
     RouterModule.forRoot(appRoutes, routingOptions),
     NoopAnimationsModule,
+    NgScrollbarModule,
+    MatButtonModule,
   ],
   providers: [
 

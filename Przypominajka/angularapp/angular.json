@@ -126,6 +126,12 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-routing-demo"
+    }
+  },
+  "defaultProject": "angular-routing-demo",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "css"
+    }
+  }
 }

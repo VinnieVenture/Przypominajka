@@ -17,7 +17,7 @@ button {
 
 .menuItem input[type="radio"]:checked + label {
   background-color: #8ebdb2;
-  -webkit-text-stroke: 1px #0cb6b161;
+  -webkit-text-stroke: 1px rgba(12, 182, 177, 0.35);
 }
 
 .menuItem label {
@@ -29,12 +29,12 @@ button {
   margin: 0;
   text-align: center;
   color: white;
-  -webkit-text-stroke: 1px #3b4c484d;
+  -webkit-text-stroke: 1px rgba(59, 76, 72, 0.35);
   font-weight: bold;
 }
 
 .menuItem label:hover {
   background-color: #a0d2c6;
   cursor: pointer;
-  -webkit-text-stroke: 1px #6a8e8687;
+  -webkit-text-stroke: 1px rgba(106, 142, 134, 0.35);
 }

@@ -1,2 +1,10 @@
+<div class="floatingButtonDiv">
+  <button class="floatingButton btn btn-add" routerLink="." (click)="ShowAdd()">
+    <span class="material-icons md-48 user">
+      add
+    </span>
+  </button>
+</div>
+<ng-scrollbar #scrollable track="all" pointerEventsMethod="scrollbar" [disabled]="disabled">
   <alarm-card class="row alarmItem" *ngFor="let item of list" [alarm]="item"></alarm-card>
-
+</ng-scrollbar>

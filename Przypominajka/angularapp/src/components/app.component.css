@@ -29,7 +29,7 @@
   background-color: #8ebdb2;
   padding-top: 10px;
   height: 200px;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .footer {
