@@ -7,14 +7,14 @@ import { NgScrollbarModule, NG_SCROLLBAR_OPTIONS } from 'ngx-scrollbar';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 
-import { DecimalPipe } from '@angular/common';
-import { DatePipe } from '@angular/common';
-
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AlarmCardComponent } from './alarm-card/alarm-card.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { AlarmInfosCardComponent } from './alarm-infos-card/alarm-infos-card.component';
+import { AddingNewAlarmCardComponent } from './adding-new-alarm-card/adding-new-alarm-card.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatNativeDateModule } from '@angular/material/core';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -33,6 +33,7 @@ const routingOptions: ExtraOptions = {
     AlarmInfosCardComponent,
     AlarmCardComponent,
     NavMenuComponent,
+    AddingNewAlarmCardComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -42,9 +43,15 @@ const routingOptions: ExtraOptions = {
     NoopAnimationsModule,
     NgScrollbarModule,
     MatButtonModule,
+ 
   ],
+  exports:
+    [
+      MatDialogModule,
+      MatNativeDateModule,
+    ],
   providers: [
-
+    
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
