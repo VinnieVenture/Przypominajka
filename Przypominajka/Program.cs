@@ -4,6 +4,7 @@ using Chromely.Core;
 using Chromely.Core.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Przypominajka.Core.Serialization;
 
 namespace ChromelyAngular
 {
@@ -12,6 +13,10 @@ namespace ChromelyAngular
         [STAThread]
         static void Main(string[] args)
         {
+            XML_Read_Write s = new XML_Read_Write();
+            //s.WriteData(new Przypominajka.Core.Models.AlarmsDTO()) ;
+            s.ReadData();
+
             var config = DefaultConfiguration.CreateForRuntimePlatform();
             config.StartUrl = "local://dist/index.html";
             config.WindowOptions.Title = "Przypominajka";
