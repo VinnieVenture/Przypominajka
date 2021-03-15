@@ -1,4 +1,5 @@
-﻿using Przypominajka.Core.Models;
+﻿using Przypominajka.Core.Interfaces;
+using Przypominajka.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,7 +10,7 @@ using System.Xml.Serialization;
 
 namespace Przypominajka.Core.Serialization
 {
-    public class XML_Read_Write
+    public class XML_Read_Write: ISerialization
     {
         const string fileName= "alarms.xml";
 

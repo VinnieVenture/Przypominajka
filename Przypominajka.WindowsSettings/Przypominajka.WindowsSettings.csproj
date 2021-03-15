@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{569CD926-8199-4D04-A615-28220853688D}</ProjectGuid>
+    <ProjectGuid>{A4A4EF83-E1C3-4E4E-B56C-6B47472695AA}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Przypominajka.Core</RootNamespace>
-    <AssemblyName>Przypominajka.Core</AssemblyName>
+    <RootNamespace>Przypominajka.WindowsSettings</RootNamespace>
+    <AssemblyName>Przypominajka.WindowsSettings</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,19 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConnectionFabric.cs" />
-    <Compile Include="Enums\DataLoadingTypes.cs" />
-    <Compile Include="Interfaces\IDataLoadingType.cs" />
-    <Compile Include="Interfaces\IRequestManager.cs" />
-    <Compile Include="Interfaces\ISerialization.cs" />
-    <Compile Include="Models\AlarmDTO.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RequestsManager.cs" />
-    <Compile Include="Serialization\XML_Read_Write.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

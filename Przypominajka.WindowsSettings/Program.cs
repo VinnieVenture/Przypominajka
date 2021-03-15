@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Przypominajka.Core
+namespace Przypominajka.WindowsSettings
 {
-    class Connection
+    class Program
     {
         static void Main(string[] args)
         {
