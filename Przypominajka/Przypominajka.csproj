@@ -46,6 +46,10 @@
     <None Remove="angularapp\node_modules\**" />
     <None Remove="packages\**" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\Przypominajka.Core\Przypominajka.Core.csproj" />
+  </ItemGroup>
 
   <ItemGroup>
     <None Update="Chromely.External.Controllers.dll">

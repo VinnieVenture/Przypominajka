@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using Chromely;
 using Chromely.Core;
 using Chromely.Core.Configuration;
@@ -12,6 +13,8 @@ namespace ChromelyAngular
         [STAThread]
         static void Main(string[] args)
         {
+            CheckAlarmsExists();
+
             var config = DefaultConfiguration.CreateForRuntimePlatform();
             config.StartUrl = "local://dist/index.html";
             config.WindowOptions.Title = "Przypominajka";
@@ -26,6 +29,14 @@ namespace ChromelyAngular
                 .UseApp<DemoApp>()
                 .Build()
                 .Run(args);
+        }
+        private static void CheckAlarmsExists() //rozwiazanie tymczasowe
+        {
+            if (!File.Exists("alarms.xml"))
+            {
+                Console.WriteLine("Tworzenie nowego pliku XML!");
+                File.Create("alarms.xml");
+            }
         }
     }
 
