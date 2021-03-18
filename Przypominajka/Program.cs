@@ -5,7 +5,6 @@ using Chromely.Core;
 using Chromely.Core.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Przypominajka.Core.Serialization;
 
 namespace ChromelyAngular
 {
