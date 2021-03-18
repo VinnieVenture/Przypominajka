@@ -1,10 +1,8 @@
 ﻿// Copyright © 2017-2020 Chromely Projects. All rights reserved.
 // Use of this source code is governed by MIT license that can be found in the LICENSE file.
 
-using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Text.Json;
+using System.Web.Mvc;
 using Chromely;
 using Chromely.Core;
 using Chromely.Core.Configuration;
@@ -17,7 +15,8 @@ namespace ChromelyAngular.Controllers
     /// <summary>
     /// The demo controller.
     /// </summary>
-    [ControllerProperty(Name = "Controller")]
+    [Route("api/[controller]")]
+    [ControllerProperty(Name = "controller")]
     public class Controller : ChromelyController
     {
         private readonly IChromelyConfiguration _config;
@@ -34,13 +33,13 @@ namespace ChromelyAngular.Controllers
             _config = config;
             _serializerUtil = serializerUtil;
 
-            RegisterRequest("/controller/alarms/get", GetAlarms);
+            RegisterRequest("/controller/alarms/getAlarms", GetAlarms);
             //RegisterRequest("/controller/alarms/post", NaraziePustaMetoda);
         }
 
         #region CommandAttributes
 
-        [CommandAction(RouteKey = "/democontroller/showdevtools")]
+        [CommandAction(RouteKey = "/controller/showdevtools")]
         public void ShowDevTools(IDictionary<string, string> queryParameters)
         {
             if (_config != null && !string.IsNullOrWhiteSpace(_config.DevToolsUrl))
@@ -50,8 +49,8 @@ namespace ChromelyAngular.Controllers
         }
 
         #endregion
-
-        private IChromelyResponse GetAlarms(IChromelyRequest request)
+        [HttpGet]
+        public IChromelyResponse GetAlarms(IChromelyRequest request)
         {
             return new ChromelyResponse(request.Id)
             {

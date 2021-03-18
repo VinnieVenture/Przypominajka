@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "echo Starting... && ng serve --proxy-config proxy.conf.json",
+    "start": "echo Starting... && ng serve ",
     "build": "ng build",
     "build:ssr": "npm run build -- --app=ssr --output-hashing=media",
     "test": "ng test",

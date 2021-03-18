@@ -4,6 +4,7 @@ import { AlarmCard } from '../alarm-card/Alarm';
 import { Alarms } from '../exampleAlarms'
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AddingNewAlarmCardComponent } from '../adding-new-alarm-card/adding-new-alarm-card.component';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,10 @@ export class HomeComponent {
   Time: Date;
   Note: string;
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private http: HttpClient)
+  {
+    http.get('/api/controller/alarms/getAlarms').subscribe(val => console.log(val));
+  }
 
 
   openDialog(): void {
